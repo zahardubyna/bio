@@ -53,15 +53,22 @@ a {
   text-align: left;
   padding: 30px 25px;
 }
+
 #img-container {
   width: 7rem;
   height: 7rem;
   overflow: hidden;
   border-radius: 50%;
-  margin: auto;
   display: inline-block;
   border: 2px solid $darken-green-color;
+  margin: auto;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
+
 #portrait {
   max-height: 115%;
   max-width: 115%;
@@ -120,6 +127,13 @@ h2 {
 .info-paragraph {
   font-size: 18px;
   margin-bottom: 3px;
+
+  & svg {
+    width: 1.1em;
+    height: 1.1em;
+    position: relative;
+    top: 0.15em;
+  }
 }
 
 .info-text {
@@ -250,6 +264,8 @@ h2 {
   flex-wrap: wrap;
   list-style-type: none;
   margin-left: -10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-section li {
@@ -344,6 +360,13 @@ a:hover svg {
   .info-paragraph {
     font-size: 16px;
     margin-bottom: 3px;
+
+    & svg {
+      width: 1.1em;
+      height: 1.1em;
+      position: relative;
+      top: 0.15em;
+    }
   }
 
   .info-text {
@@ -365,9 +388,40 @@ a:hover svg {
   }
 
   .body-text {
-    width: 18rem;
     padding-top: 0;
-    padding-left: 3rem;
+  }
+
+  .contact-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-section li {
+    display: inline-block;
+    margin: 8px;
+  }
+
+  .contact-section a {
+    border: 1px solid $special-text-color;
+    border-radius: 4px;
+    padding: 10px 18px;
+    text-decoration: none;
+  }
+
+  .contact-section a:hover {
+    border: 1px solid $basic-green-color;
+  }
+
+  .contact-section svg {
+    width: 1rem;
+    height: auto;
+    fill: $special-text-color;
+    margin-right: 10px;
+    margin-bottom: -2px;
+    transition: .5s ease all;
   }
 
   .contact-section li {
