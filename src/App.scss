@@ -1,4 +1,6 @@
 $special-text-color: #383838;
+$border-radius-color: #d7d7d7;
+
 $basic-green-color: #2ec47a;
 $darken-green-color: darken($basic-green-color, 20%);
 
@@ -13,6 +15,7 @@ body {
 
 .cnv_tree{
   position: fixed;
+  color: black;
   width: 100%;
   height: 100%;
   top: 0;
@@ -21,18 +24,17 @@ body {
 }
 
 a {
-  color: $special-text-color;
+  color: #595959;
   transition: .5s ease all;
 
   &:hover {
-    color: $basic-green-color;
+    color: black;
     transition: 0.5s ease all;
   }
 }
 
 .card-container {
-  width: 85%;
-  max-width: 35rem;
+  width: 35rem;
   margin: 2.5rem auto;
   border-radius: 8px;
 }
@@ -40,9 +42,9 @@ a {
 .header-container {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   background-color: white;
   border-radius: 8px 8px 0 0;
-  //border-bottom: 1px solid #2ec47a;
 }
 
 .name-container {
@@ -52,6 +54,12 @@ a {
   border-top-right-radius: 8px;
   text-align: left;
   padding: 30px 25px;
+}
+
+.contacts {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 #img-container {
@@ -84,19 +92,20 @@ h2 {
 
 .name-container > p {
   font-family: sans-serif;
-  font-size: 1.1rem;
-  color: #00000085;
+  font-size: 0.8rem;
+  color: #00000095;
   font-weight: normal;
 }
 
 .info-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   margin-top: 30px;
   margin-bottom: 20px;
-  padding: 0 10px;
+  padding: 0 25px;
   width: 50%;
-  gap: 10px;
+  gap: 4px;
 }
 
 .info-box {
@@ -109,12 +118,12 @@ h2 {
   display: flex;
   width: 100%;
   height: 100%;
-  border: 1px solid #d7d7d7;
+  border: 1px solid $border-radius-color;
   border-radius: 10px;
   transition: 0.3s;
 
   &:hover{
-    border: 1px solid darken(#d7d7d7, 30%);
+    border: 1px solid darken($border-radius-color, 30%);
   }
 }
 
@@ -180,23 +189,17 @@ h2 {
 }
 
 .section {
-  padding: 10px 30px 30px 30px;
-}
-
-.about-section {
   background-color: white;
-}
-
-.skills-section {
-  background-color: white;
+  //max-width: 100%;
+  margin: 0 auto;
+  padding: 15px 30px;
 }
 
 .info-skills-inbox {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 100%;
-  border: 1px solid #d7d7d7;
+  border: 1px solid $border-radius-color;
   border-radius: 10px;
 }
 
@@ -224,10 +227,6 @@ h2 {
   }
 }
 
-.contact-section {
-  background-color: white;
-}
-
 .section-title {
   border-bottom: 1px solid #2ec47a;
   padding-bottom: 15px;
@@ -243,6 +242,7 @@ h2 {
   width: 80px;
   height: 80px;
 }
+
 .emoji {
   text-align: center;
   font-size: 70px;
@@ -257,52 +257,8 @@ h2 {
   line-height: 2;
 }
 
-/* Contact UL */
-
-.contact-section ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-  margin-left: -10px;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-section li {
-  display: inline-block;
-  margin: 8px;
-}
-
-.contact-section a {
-  border: 1px solid $special-text-color;
-  border-radius: 4px;
-  padding: 10px 18px;
-  text-decoration: none;
-}
-
-.contact-section a:hover {
-  border: 1px solid $basic-green-color;
-}
-
-.contact-section svg {
-  width: 1rem;
-  height: auto;
-  fill: $special-text-color;
-  margin-right: 10px;
-  margin-bottom: -2px;
-  transition: .5s ease all;
-}
-
-a:hover svg {
-  fill:$basic-green-color;
-  transition: .5s ease all;
-}
-
-/* End Contact UL */
-
-.contact-section {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+.border-radius-bottom {
+  border-radius: 0 0 8px 8px;
 }
 
 /* Media Queries */
@@ -312,22 +268,46 @@ a:hover svg {
     font-size: 0.8rem;
   }
 
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px 8px 0 0;
+  }
+
   .card-container {
+    width: 95%;
+    max-width: max-content;
     margin: 4rem auto;
   }
 
+  #img-container {
+    width: 9rem;
+    height: 9rem;
+  }
+
   .name-container {
-    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem;
+    & p {
+      font-size: 1.3rem;
+    }
+  }
+
+  .contacts {
+    gap: 0.8rem;
   }
 
   .info-container {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    width: 90%;
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0 10px;
-    width: 50%;
-    gap: 10px;
   }
 
   .info-box {
@@ -342,12 +322,12 @@ a:hover svg {
   .info-inbox {
     display: flex;
     height: 100%;
-    border: 1px solid #d7d7d7;
+    border: 1px solid $border-radius-color;
     border-radius: 10px;
     transition: 0.3s;
 
     &:hover{
-      border: 1px solid darken(#d7d7d7, 30%);
+      border: 1px solid darken($border-radius-color, 30%);
     }
   }
 
@@ -377,6 +357,7 @@ a:hover svg {
   }
 
   .section {
+    //width: 95%;
     padding: 10px 20px;
   }
 
@@ -389,43 +370,6 @@ a:hover svg {
 
   .body-text {
     padding-top: 0;
-  }
-
-  .contact-section ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .contact-section li {
-    display: inline-block;
-    margin: 8px;
-  }
-
-  .contact-section a {
-    border: 1px solid $special-text-color;
-    border-radius: 4px;
-    padding: 10px 18px;
-    text-decoration: none;
-  }
-
-  .contact-section a:hover {
-    border: 1px solid $basic-green-color;
-  }
-
-  .contact-section svg {
-    width: 1rem;
-    height: auto;
-    fill: $special-text-color;
-    margin-right: 10px;
-    margin-bottom: -2px;
-    transition: .5s ease all;
-  }
-
-  .contact-section li {
-    margin: 10px 5px;
   }
 }
 
