@@ -27,9 +27,11 @@ a {
   color: #595959;
   transition: .5s ease all;
 
-  &:hover {
-    color: black;
-    transition: 0.5s ease all;
+  @media (hover: hover) {
+    &:hover {
+      color: black;
+      transition: .5s ease all;
+    }
   }
 }
 
@@ -53,7 +55,7 @@ a {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   text-align: left;
-  padding: 30px 25px;
+  padding: 30px 30px;
 }
 
 .contacts {
@@ -101,9 +103,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  padding: 0 25px;
+  padding: 30px 30px;
   width: 50%;
   gap: 4px;
 }
@@ -120,10 +120,11 @@ h2 {
   height: 100%;
   border: 1px solid $border-radius-color;
   border-radius: 10px;
-  transition: 0.3s;
+  transition: .3s;
 
-  &:hover{
+  &:hover {
     border: 1px solid darken($border-radius-color, 30%);
+    transition: .5s ease all;
   }
 }
 
@@ -222,8 +223,11 @@ h2 {
   font-weight: 500;
   transition: 0.3s;
 
-  &:hover {
-    background: #BEBEBE;
+  @media (hover: hover) {
+    &:hover {
+      background: #BEBEBE;
+      transition: .5s ease all;
+    }
   }
 }
 

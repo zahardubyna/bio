@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import {Link} from 'react-router-dom';
 import me from '../public/images/avatars/fish.jpg';
 import Logos from './common/config/logos';
@@ -9,6 +9,7 @@ import "./App.scss";
 
 function App() {
     let cnv_ref = useRef(null);
+    const [hovered, setHovered] = useState(false);
 
     Tree(cnv_ref)
 
@@ -32,8 +33,8 @@ function App() {
                                 <Logos.Github />
                             </Link>
 
-                            <Link to="mailto:zahdub@gmail.com">
-                                <Logos.Email />
+                            <Link to="mailto:zahdub@gmail.com" onClick={() => setHovered(false)} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+                                {hovered ? <Logos.EmailOpen /> : <Logos.Email />}
                             </Link>
                         </div>
                     </div>
