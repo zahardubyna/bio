@@ -5,6 +5,8 @@ import Logos from './common/config/logos';
 import Tree from "./components/Tree/Tree";
 
 import "./App.scss";
+import PixelCard from "./components/PixelCard/PixelCard";
+import TextCursor from "./components/TextCursor/TextCursor";
 
 
 function App() {
@@ -139,10 +141,10 @@ function App() {
 
                 <div className="section border-radius-bottom">
                     <h2 className="section-title">Projects</h2>
-                    <div>
-                        <div>
-                            <div className={'info-inbox cursor-pointer margin-bottom'} onClick={() => {
-                                window.open('https://github.com/zahardubyna/4-backend')
+                    <div className={'gap flex'}>
+                        <PixelCard variant={'default'}>
+                            <div className={'info-inbox cursor-pointer'} onClick={() => {
+                                window.open('https://github.com/zahardubyna/swapi')
                             }}>
                                 <img className={'project-icon padding'}
                                      src="https://img.icons8.com/?size=100&id=lYpJCJN3hGwm&format=png&color=000000"
@@ -152,22 +154,31 @@ function App() {
                                     <p className={'info-text'}>This project is a NestJS-based backend application designed to manage and process Star Wars API (SWAPI) data, storing it in a structured database. It includes data parsing, migration handling, and relationship mapping to efficiently organize and query Star Wars universe entities such as films, characters, planets, species, starships, and vehicles.</p>
                                 </div>
                             </div>
-                        </div>
+                        </PixelCard>
 
-                        <div>
-                            <div className={'info-inbox cursor-pointer margin-bottom'} onClick={() => {
-                                window.open('https://github.com/zahardubyna/bio')
-                            }}>
+                        <TextCursor
+                            text="🌳"
+                            delay={0.01}
+                            spacing={80}
+                            followMouseDirection={true}
+                            randomFloat={true}
+                            exitDuration={0.3}
+                            removalInterval={80}
+                            maxPoints={10}
+                        >
+                          <div className={'info-inbox cursor-pointer'} onClick={() => {
+                            window.open('https://github.com/zahardubyna/bio')
+                          }}>
                             <img className={'project-icon padding'}
-                                     src="https://img.icons8.com/?size=100&id=VYbFkFCTRWLV&format=png&color=000000"
-                                     alt="home"/>
-                                <div className={'info-content padding height'}>
-                                    <p className={'info-paragraph font-weight700 font-size20px'}>🌳 My Bio</p>
-                                    <p className={'info-text'}>Page about me,
-                                        my projects, my experience, written in ReactJs</p>
-                                </div>
+                                 src="https://img.icons8.com/?size=100&id=VYbFkFCTRWLV&format=png&color=000000"
+                                 alt="home"/>
+                            <div className={'info-content padding height'}>
+                              <p className={'info-paragraph font-weight700 font-size20px'}>🌳 My Bio</p>
+                              <p className={'info-text'}>Page about me,
+                                my projects, my experience, written in ReactJs</p>
                             </div>
-                        </div>
+                          </div>
+                        </TextCursor>
 
                     </div>
 
